@@ -16,9 +16,11 @@ const linkReqRespStats = function ($scope, config) {
     $scope.resKeys = [];
     $scope.iterateKeys = function(data) {
  	   var result = {};
+ 	   result['resp'] = 'resp';
+ 	   result['req'] = 'req';
  	   function recurse (cur, prop) {
  	       if (Object(cur) !== cur) {
- 	           result[prop] = cur;
+ 	           // result[prop] = cur;
  	       } else if (Array.isArray(cur)) {
  	           result[prop] = cur;
  	       } else {
@@ -42,10 +44,16 @@ const linkReqRespStats = function ($scope, config) {
     $scope.filtered = $scope.req.resp;
 
     $scope.updateRoot = function() {
-        var newdata = $scope.req.resp;
-    	var res = $scope.export_root.split(".")
-        res.forEach(function(node){ newdata = newdata[node] });
-   	$scope.filtered = newdata;
+	 if ($scope.export_root == "resp") {
+             $scope.filtered = $scope.req.resp;
+	} else if ($scope.export_root == "req") {
+             $scope.filtered = $scope.req;
+        } else {
+             var newdata = $scope.req.resp;
+    	     var res = $scope.export_root.split(".")
+             res.forEach(function(node){ newdata = newdata[node] });
+   	     $scope.filtered = newdata;
+	}
     }
 
 

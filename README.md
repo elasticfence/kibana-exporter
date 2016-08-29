@@ -1,7 +1,8 @@
 # Kibana Exporter (Spy Plugin)
 
-Simple Kibana plugin extending SPY with response exporting functionality _(JSON, CSV)_
+Simple Kibana 4.5 plugin extending SPY with response exporting functionality _(JSON, CSV)_
 
+<img src="http://i.imgur.com/TUhjSRM.png" />
 
 ### Installation
 

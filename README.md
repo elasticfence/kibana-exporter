@@ -9,7 +9,7 @@ Simple Kibana 4.5 plugin extending SPY with response exporting functionality _(J
 #### Dev Plugin Install
 ```
 git clone https://github.com/elasticfence/kibana-exporter
-cd kaae && npm install && npm run package
+cd kibana-exporter && npm install && npm run package
 /opt/kibana/bin/kibana plugin --install kibana-exporter -u file://`pwd`/kexp-latest.tar.gz
 ```
 #### Dev Plugin Remove

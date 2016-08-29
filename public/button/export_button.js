@@ -18,8 +18,9 @@ const linkReqRespStats = function ($scope, config) {
         saveAs(blob, 'response_export.json');
     };
 
-    function exportJson() {
-          saveToJson(response);
+    $scope.exportJson = function() {
+	// server.log(['info','status','export'], 'Saving response as JSON... ');
+          saveToJson(resp);
     };
 
     function saveToCsv(data) {
@@ -27,8 +28,9 @@ const linkReqRespStats = function ($scope, config) {
         saveAs(blob, 'response_export.csv');
     };
 
-    function exportCsv() {
-	jsonexport(response,function(err, csv){
+    $scope.exportCsv = function() {
+	// server.log(['info','status','export'], 'Saving response as CSV... ');
+	jsonexport(resp,function(err, csv){
 	    if(err) return console.log(err);
             saveToCsv(csv);
 	});
@@ -46,7 +48,7 @@ require('ui/registry/spy_modes').register(function () {
     name: 'exportdata',
     order: 1000,
     link: linkReqRespStats,
-    template: require('plugins/kaae/button/export_spy.html')
+    template: require('plugins/kibana-exporter/button/export_spy.html')
   };
 });
 

@@ -1,0 +1,17 @@
+<div ng-show="spy.mode.name === 'exportdata'" class="fill visualize-spy-nav">
+  <div class="form-group">
+  	<a class="btn btn-default ng-binding ng-scope" ng-click="exportJson()" href="javascript:;">Save as JSON</a>
+  	<a class="btn btn-default ng-binding ng-scope" ng-click="exportCsv()" href="javascript:;">Save as CSV</a>
+	<p class="hintbox">
+		Save Query response and Export for post-processing
+	</p>
+
+  </div>
+
+  <div style="clear:both;"></div>
+
+  <div class="form-group">
+	  <br/>
+	  <pre>{{ resp | json }}</pre>
+  </div>
+</div>

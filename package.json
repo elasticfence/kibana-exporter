@@ -1,0 +1,26 @@
+{
+  "author": "Lorenzo Mangani <lorenzo.mangani@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/elasticfence/kibana-exporter.git"
+  },
+  "name": "kibana-exporter",
+  "version": "0.0.5",
+  "description": "Kibana Exporter for Elasticsearch",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint",
+    "kexp-install": "/opt/kibana/bin/kibana plugin --install kibana-exporter -u file://`pwd`/kexp-latest.tar.gz",
+    "kexp-remove": "/opt/kibana/bin/kibana plugin --remove kibana-exporter",
+    "package": "tar cfz ./kexp-latest.tar.gz --exclude .git --exclude .gitignore --exclude kexp-latest.tar.gz ./* && ls -alF kexp-latest*"
+  },
+  "dependencies": {
+    "jsonexport": "*"
+  },
+  "devDependencies": {
+    "babel-eslint": "4.1.8",
+    "eslint": "1.10.3",
+    "eslint-plugin-mocha": "1.1.0"
+  },
+   "license": "MIT"
+}

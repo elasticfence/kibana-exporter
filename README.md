@@ -2,7 +2,7 @@
 
 Simple Kibana 4.5 plugin extending SPY with response exporting functionality _(JSON, CSV, XML)_
 
-<img src="http://i.imgur.com/aiyhzpG.png" />
+<img src="http://i.imgur.com/MPGHiB2.gif" />
 
 ### Plugin Installation
 ```
